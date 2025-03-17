@@ -58,7 +58,7 @@ set(QT_DISABLE_PRECATED_BEFORE_VAL "0x050900")
 
 #Set Cmake Auto features to skip .hh files
 if(POLICY CMP0100)
-  cmake_policy(SET CMP0100 OLD)
+  cmake_policy(SET CMP0100 NEW)
 endif()
 
 #If building CUDA required libraries

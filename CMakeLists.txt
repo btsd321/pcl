@@ -1,4 +1,4 @@
-### ---[ PCL global CMake
+﻿### ---[ PCL global CMake
 cmake_minimum_required(VERSION 3.16.3 FATAL_ERROR)
 
 # Set target C++ standard and required compiler features
@@ -344,7 +344,7 @@ if(NOT EIGEN3_FOUND AND Eigen3_FOUND)
 endif()
 
 # FLANN
-find_package(FLANN 1.9.1)
+find_package(flann PATHS "D:/SoftWare/Library/flann/install/lib/cmake/flann")
 if(NOT FLANN_FOUND)
   message(WARNING "Flann was not found, so many PCL modules will not be built!")
 else()

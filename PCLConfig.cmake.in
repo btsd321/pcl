@@ -25,7 +25,6 @@
 #                                   www.pointclouds.org
 #------------------------------------------------------------------------------------
 
-
 # Set default policy behavior similar to minimum requirement version
 cmake_policy(VERSION 3.16.3)
 

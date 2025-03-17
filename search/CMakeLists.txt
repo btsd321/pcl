@@ -1,4 +1,4 @@
-set(SUBSYS_NAME search)
+﻿set(SUBSYS_NAME search)
 set(SUBSYS_DESC "Point cloud generic search library")
 set(SUBSYS_DEPS common kdtree octree)
 
@@ -38,8 +38,11 @@ set(impl_incs
 )
 
 set(LIB_NAME "pcl_${SUBSYS_NAME}")
+
+find_package(flann PATHS "D:/SoftWare/Library/flann/install/lib/cmake/flann")
+find_package(lz4 PATHS "D:/SoftWare/Library/lz4/install/lz4_win64_v1_10_0/lib/cmake/lz4")
 PCL_ADD_LIBRARY(${LIB_NAME} COMPONENT ${SUBSYS_NAME} SOURCES ${srcs} ${incs} ${impl_incs})
-target_link_libraries("${LIB_NAME}" pcl_common FLANN::FLANN pcl_octree pcl_kdtree)
+target_link_libraries("${LIB_NAME}" pcl_common flann::flann pcl_octree pcl_kdtree lz4::lz4)
 list(APPEND EXT_DEPS flann)
 PCL_MAKE_PKGCONFIG(${LIB_NAME} COMPONENT ${SUBSYS_NAME} DESC ${SUBSYS_DESC} PCL_DEPS ${SUBSYS_DEPS})
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Software License Agreement (BSD License)
  *
  *  Point Cloud Library (PCL) - www.pointclouds.org
@@ -41,6 +41,8 @@
 #ifdef __GNUC__
 #pragma GCC system_header
 #endif
+
+#include <cassert>
 
 #include <Eigen/StdVector>
 #include <Eigen/Geometry>

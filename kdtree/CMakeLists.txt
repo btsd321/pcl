@@ -1,4 +1,4 @@
-set(SUBSYS_NAME kdtree)
+﻿set(SUBSYS_NAME kdtree)
 set(SUBSYS_DESC "Point cloud kd-tree library")
 set(SUBSYS_DEPS common)
 
@@ -26,9 +26,13 @@ set(impl_incs
   "include/pcl/${SUBSYS_NAME}/impl/kdtree_flann.hpp"
 )
 
+find_package(flann PATHS "D:/SoftWare/Library/flann/install/lib/cmake/flann")
+find_package(lz4 PATHS "D:/SoftWare/Library/lz4/install/lz4_win64_v1_10_0/lib/cmake/lz4")
+
 set(LIB_NAME "pcl_${SUBSYS_NAME}")
 PCL_ADD_LIBRARY(${LIB_NAME} COMPONENT ${SUBSYS_NAME} SOURCES ${srcs} ${incs} ${impl_incs})
-target_link_libraries("${LIB_NAME}" pcl_common FLANN::FLANN)
+target_link_libraries("${LIB_NAME}" pcl_common flann::flann lz4::lz4)
+
 set(EXT_DEPS flann)
 PCL_MAKE_PKGCONFIG(${LIB_NAME} COMPONENT ${SUBSYS_NAME} DESC ${SUBSYS_DESC} PCL_DEPS ${SUBSYS_DEPS} EXT_DEPS ${EXT_DEPS})
 
